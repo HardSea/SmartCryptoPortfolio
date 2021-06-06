@@ -12,4 +12,6 @@
 	<color name="main_background">#171515</color>
 	<color name="secondary_color">#2A2A2A</color>
 	<color name="gray_text_color">#666666</color>
+	<color name="green">#43A047</color>
+	<color name="red">#B71C1C</color>
 </resources>

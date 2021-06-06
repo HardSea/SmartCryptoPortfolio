@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<declare-styleable name="CurrencyWidgetView">
+		<attr name="name" format="string"/>
+		<attr name="value" format="string"/>
+		<attr name="price" format="string"/>
+		<attr name="changePercent" format="string"/>
+		<attr name="changeDirection" format="enum">
+			<enum name="up" value="1"/>
+			<enum name="down" value="0"/>
+		</attr>
+	</declare-styleable>
+</resources>
