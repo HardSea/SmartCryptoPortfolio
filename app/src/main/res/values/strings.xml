@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Smart Crypto Portfolio</string>
+	<string name="home_screen_see_all">See all</string>
+	<string name="home_screen_edit_portfolio">Edit portfolio</string>
+	<string name="home_screen_your_investments">Your investments</string>
+	<string name="good_morning_text">Good morning</string>
 </resources>
