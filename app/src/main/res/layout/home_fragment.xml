@@ -4,19 +4,27 @@
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
-	android:layout_height="match_parent">
+	android:layout_height="match_parent"
+	android:background="@color/main_background">
 
 	<androidx.appcompat.widget.AppCompatImageView
 		android:id="@+id/ivUserAvatar"
-		android:layout_width="40dp"
-		android:layout_height="40dp"
-		tools:src="@mipmap/ic_launcher"/>
+		android:layout_width="@dimen/ic_avatar_size"
+		android:layout_height="@dimen/ic_avatar_size"
+		android:layout_margin="@dimen/margin_big"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:srcCompat="@mipmap/ic_launcher"/>
 
 	<TextView
 		android:id="@+id/tvTitleNearUserAvatar"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
+		android:layout_marginStart="8dp"
+		android:text="Good morning"
+		android:textColor="@color/gray_text_color"
 		app:layout_constraintStart_toEndOf="@+id/ivUserAvatar"
+		app:layout_constraintTop_toTopOf="@id/ivUserAvatar"
 		tools:text="Good morning"/>
 
 	<TextView
@@ -24,33 +32,111 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:text="Test User K."
-		tools:text="Test User K."
-		app:layout_constraintStart_toEndOf="@id/ivUserAvatar"
-		app:layout_constraintTop_toBottomOf="@id/tvTitleNearUserAvatar"/>
+		android:textColor="@color/white"
+		app:layout_constraintStart_toStartOf="@id/tvTitleNearUserAvatar"
+		app:layout_constraintTop_toBottomOf="@id/tvTitleNearUserAvatar"
+		tools:text="Test User K."/>
 
+	<androidx.appcompat.widget.AppCompatImageView
+		android:id="@+id/ivNotification"
+		android:layout_width="wrap_content"
+		android:layout_height="0dp"
+		android:layout_margin="@dimen/margin_big"
+		android:background="@drawable/circle_shape"
+		android:padding="@dimen/padding_extra_short"
+		app:layout_constraintBottom_toBottomOf="@id/ivUserAvatar"
+		app:layout_constraintDimensionRatio="1"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="@id/ivUserAvatar"
+		app:srcCompat="@drawable/ic_notifications"/>
 
+	<include
+		android:id="@+id/layout_balance_tab"
+		layout="@layout/layout_balance_tab"
+		android:layout_marginTop="@dimen/margin_long"
+		android:layout_marginBottom="@dimen/margin_long"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		app:layout_constraintBottom_toTopOf="@id/containerInvestments"
+		app:layout_constraintEnd_toEndOf="@id/ivNotification"
+		app:layout_constraintStart_toStartOf="@id/ivUserAvatar"
+		app:layout_constraintTop_toBottomOf="@id/ivUserAvatar"/>
 
-			<com.google.android.material.tabs.TabLayout
-				android:layout_width="match_parent"
-				android:layout_height="50dp"
-				app:layout_constraintTop_toBottomOf="@+id/tvUserName"
-				android:id="@+id/tlInvestment"
-				app:layout_constraintStart_toStartOf="parent"
-				app:layout_constraintTop_toTopOf="parent"
-				android:background="@drawable/ic_launcher_background"
-				app:tabGravity="fill"
-				app:tabMode="fixed"
-				app:tabSelectedTextColor="#ffffff"
-				app:tabIndicatorColor="@null"
-				app:tabRippleColor="@null"
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/containerInvestments"
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		android:layout_marginBottom="@dimen/margin_long"
+		android:background="@drawable/circle_balance_shape"
+		app:layout_constraintBottom_toTopOf="@id/tvEditPortfolio"
+		app:layout_constraintEnd_toEndOf="@id/layout_balance_tab"
+		app:layout_constraintStart_toStartOf="@id/layout_balance_tab"
+		app:layout_constraintTop_toBottomOf="@id/layout_balance_tab">
 
-				/>
+		<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/tvYourInvestmentsText"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/margin_standard"
+			android:layout_marginTop="8dp"
+			android:textColor="@color/white"
+			android:text="Your investments"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintStart_toStartOf="parent"/>
+
+		<include
+			android:id="@+id/layout_investing_tab"
+			layout="@layout/layout_investing_tab"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/margin_short"
+			android:layout_marginEnd="@dimen/margin_standard"
+			android:layout_marginStart="@dimen/margin_standard"
+			app:layout_constraintTop_toBottomOf="@id/tvYourInvestmentsText"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
 		<androidx.viewpager.widget.ViewPager
 			android:id="@+id/viewPager"
-			android:layout_width="wrap_content"
-			app:layout_constraintTop_toBottomOf="@id/tlInvestment"
-			android:layout_height="wrap_content"/>
+			android:layout_width="0dp"
+			android:layout_height="0dp"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/layout_investing_tab"
+			tools:layout_editor_absoluteX="0dp"/>
 
-=
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+	<androidx.appcompat.widget.AppCompatTextView
+		android:id="@+id/tvEditPortfolio"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginEnd="@dimen/margin_standard"
+		android:layout_marginBottom="@dimen/margin_long"
+		android:background="@drawable/circle_filled_button"
+		android:gravity="center"
+		android:paddingHorizontal="@dimen/margin_short"
+		android:paddingVertical="@dimen/margin_short"
+		android:text="Edit portfolio"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toStartOf="@id/tvSeeAll"
+		app:layout_constraintHorizontal_weight="4"
+		app:layout_constraintStart_toStartOf="@id/containerInvestments"/>
+
+	<androidx.appcompat.widget.AppCompatTextView
+		android:id="@+id/tvSeeAll"
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		android:background="@drawable/circle_unfilled_button"
+		android:gravity="center"
+		android:text="See all"
+		android:textColor="@color/white"
+		app:layout_constraintBottom_toBottomOf="@id/tvEditPortfolio"
+		app:layout_constraintEnd_toEndOf="@id/containerInvestments"
+		app:layout_constraintHorizontal_weight="2"
+		app:layout_constraintStart_toEndOf="@id/tvEditPortfolio"
+		app:layout_constraintTop_toTopOf="@id/tvEditPortfolio"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

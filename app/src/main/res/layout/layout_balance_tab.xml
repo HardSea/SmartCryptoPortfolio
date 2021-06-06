@@ -1,0 +1,43 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:background="@drawable/circle_balance_shape"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+
+	<androidx.appcompat.widget.AppCompatTextView
+		android:id="@+id/tvBalanceText"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="@dimen/margin_standard"
+		android:layout_marginTop="@dimen/margin_standard"
+		android:text="Your balance"
+		android:textColor="@color/white"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"/>
+
+	<androidx.appcompat.widget.AppCompatTextView
+		android:id="@+id/tvBalanceAmount"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="@dimen/margin_standard"
+		android:text="$43,976.02"
+		android:textColor="@color/white"
+		android:textSize="@dimen/text_size_extra_large"
+		android:textStyle="bold"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintStart_toStartOf="@id/tvBalanceText"
+		app:layout_constraintTop_toBottomOf="@id/tvBalanceText"/>
+
+	<TextView
+		android:id="@+id/percentChangeWidget"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginEnd="15dp"
+		android:text="43,43%"
+		android:textColor="@color/white"
+		app:layout_constraintBottom_toBottomOf="@id/tvBalanceAmount"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="@id/tvBalanceAmount"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

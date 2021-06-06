@@ -21,15 +21,15 @@
 		android:id="@+id/tlBottomNav"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:background="#1E3350"
+		android:background="@color/main_background"
 		app:tabMode="fixed"
-		app:tabIndicatorColor="#1E3350"
+		app:tabIndicatorColor="@color/main_background"
 		app:tabGravity="fill"
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:tabSelectedTextColor="@color/white"
 		app:tabIconTint="@color/color_selector_bottom_icon"
 		app:tabIconTintMode="multiply"
-		app:tabRippleColor="#1E3350"
+		app:tabRippleColor="@color/main_background"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintEnd_toEndOf="parent">
 
