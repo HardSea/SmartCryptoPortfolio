@@ -1,4 +1,4 @@
-package com.hillywave.smartcryptoportfolio.base.ui
+package com.hillywave.smartcryptoportfolio.home.ui
 
 import android.content.Context
 import android.util.AttributeSet
@@ -8,7 +8,7 @@ import androidx.core.content.ContextCompat
 import com.hillywave.smartcryptoportfolio.R
 import com.hillywave.smartcryptoportfolio.databinding.CurrencyWidgetViewBinding
 
-private enum class ChangeDirection(val value: Int) {
+enum class ChangeDirection(val value: Int) {
 	UP(1),
 	DOWN(0);
 
@@ -29,8 +29,6 @@ constructor(context: Context, attributeSet: AttributeSet? = null) : ConstraintLa
 
 	init {
 		setupAttributes(attributeSet)
-		//inflate(context, binding.root, this)
-		//addView(binding.root)
 	}
 
 	private fun setupAttributes(attributeSet: AttributeSet?) {
@@ -40,25 +38,39 @@ constructor(context: Context, attributeSet: AttributeSet? = null) : ConstraintLa
 		)
 
 		val name = typedArray.getString(R.styleable.CurrencyWidgetView_name)
+		changeName(name)
 		val value = typedArray.getString(R.styleable.CurrencyWidgetView_value)
+		changeValue(value)
 		val price = typedArray.getString(R.styleable.CurrencyWidgetView_price)
+		changePrice(price)
 		val changePercent = typedArray.getString(R.styleable.CurrencyWidgetView_changePercent)
+		changePercent(changePercent)
 
 		if (name.isNullOrEmpty() || value.isNullOrEmpty() || price.isNullOrEmpty() || changePercent.isNullOrEmpty()) invalidate()
 
 		val changeDirection = ChangeDirection.fromId(typedArray.getInt(R.styleable.CurrencyWidgetView_changeDirection, 0))
 		typedArray.recycle()
 
-		binding.apply {
-			tvCurrencyTitle.text = name
-			tvAvailableValue.text = value
-			tvCurrencyPrice.text = price
-			tvChangePercent.text = changePercent
-		}
-		setPriceDirection(changeDirection)
+		changeDirection(changeDirection)
 	}
 
-	private fun setPriceDirection(changeDirection: ChangeDirection) {
+	fun changeName(name: String?) {
+		binding.tvCurrencyTitle.text = name
+	}
+
+	fun changeValue(value: String?) {
+		binding.tvAvailableValue.text = value
+	}
+
+	fun changePrice(price: String?) {
+		binding.tvCurrencyPrice.text = price
+	}
+
+	fun changePercent(changePercent: String?) {
+		binding.tvChangePercent.text = changePercent
+	}
+
+	fun changeDirection(changeDirection: ChangeDirection) {
 		binding.apply {
 			when (changeDirection) {
 				ChangeDirection.DOWN -> {

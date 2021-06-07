@@ -6,35 +6,35 @@
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	android:orientation="vertical">
 
-	<com.hillywave.smartcryptoportfolio.base.ui.CurrencyWidgetViewGroup
+	<com.hillywave.smartcryptoportfolio.home.ui.CurrencyWidgetViewGroup
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		app:name="asfas"
-		app:value="asfas"
-		app:price="asfas"
-		app:changePercent="asfas"
+		app:name="Android"
+		app:value="10000"
+		app:price="1000"
+		app:changePercent="34,23"
 		app:changeDirection="up"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"/>
 
-	<com.hillywave.smartcryptoportfolio.base.ui.CurrencyWidgetViewGroup
+	<com.hillywave.smartcryptoportfolio.home.ui.CurrencyWidgetViewGroup
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		app:name="asfas"
-		app:value="asfas"
-		app:price="asfas"
-		app:changePercent="asfas"
+		app:name="Android"
+		app:value="10000"
+		app:price="1000"
+		app:changePercent="34,23"
 		app:changeDirection="up"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"/>
 
-	<com.hillywave.smartcryptoportfolio.base.ui.CurrencyWidgetViewGroup
+	<com.hillywave.smartcryptoportfolio.home.ui.CurrencyWidgetViewGroup
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		app:name="asfas"
-		app:value="asfas"
-		app:price="asfas"
-		app:changePercent="asfas"
+		app:name="Android"
+		app:value="10000"
+		app:price="1000"
+		app:changePercent="34,23"
 		app:changeDirection="up"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"/>

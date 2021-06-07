@@ -20,6 +20,7 @@ class HomeFragment : BaseFragment(R.layout.home_fragment) {
 	}
 
 	private fun initInvestingTab() {
+		bindings.investmentsViewPager.isUserInputEnabled = false
 		val selectedTextColor = ContextCompat.getColor(requireActivity(), R.color.white)
 		val unselectedTextColor = ContextCompat.getColor(requireActivity(), R.color.gray_text_color)
 		bindings.layoutInvestingTab.apply {
@@ -27,14 +28,17 @@ class HomeFragment : BaseFragment(R.layout.home_fragment) {
 				tabInvestingSelectedTab.animate().x(0f).duration = 100
 				tabInvestingTab1.setTextColor(selectedTextColor)
 				tabInvestingTab2.setTextColor(unselectedTextColor)
+				bindings.investmentsViewPager.currentItem = 0
 			}
 			tabInvestingTab2.setOnClickListener {
 				tabInvestingTab1.setTextColor(unselectedTextColor)
 				tabInvestingTab2.setTextColor(selectedTextColor)
 				val size: Float = tabInvestingTab2.width.toFloat()
 				tabInvestingSelectedTab.animate().x(size).duration = 100
+				bindings.investmentsViewPager.currentItem = 1
 			}
 		}
+		bindings.investmentsViewPager.adapter = InvestingViewPagerAdapter(this)
 	}
 
 	companion object {
