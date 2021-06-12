@@ -25,20 +25,27 @@ class HomeFragment : BaseFragment(R.layout.home_fragment) {
 		val unselectedTextColor = ContextCompat.getColor(requireActivity(), R.color.gray_text_color)
 		bindings.layoutInvestingTab.apply {
 			tabInvestingTab1.setOnClickListener {
-				tabInvestingSelectedTab.animate().x(0f).duration = 100
-				tabInvestingTab1.setTextColor(selectedTextColor)
-				tabInvestingTab2.setTextColor(unselectedTextColor)
-				bindings.investmentsViewPager.currentItem = 0
+				switchInvestingTab(size = 0f, tab1Color = selectedTextColor, tab2Color = unselectedTextColor, currentItem = 0)
 			}
 			tabInvestingTab2.setOnClickListener {
-				tabInvestingTab1.setTextColor(unselectedTextColor)
-				tabInvestingTab2.setTextColor(selectedTextColor)
-				val size: Float = tabInvestingTab2.width.toFloat()
-				tabInvestingSelectedTab.animate().x(size).duration = 100
-				bindings.investmentsViewPager.currentItem = 1
+				switchInvestingTab(
+					size = tabInvestingTab2.width.toFloat(),
+					tab1Color = unselectedTextColor,
+					tab2Color = selectedTextColor,
+					currentItem = 1
+				)
 			}
 		}
 		bindings.investmentsViewPager.adapter = InvestingViewPagerAdapter(this)
+	}
+
+	private fun switchInvestingTab(tab1Color: Int, tab2Color: Int, size: Float, currentItem: Int) {
+		bindings.layoutInvestingTab.apply {
+			tabInvestingSelectedTab.animate().x(size).duration = 100
+			tabInvestingTab1.setTextColor(tab1Color)
+			tabInvestingTab2.setTextColor(tab2Color)
+			bindings.investmentsViewPager.currentItem = currentItem
+		}
 	}
 
 	companion object {
