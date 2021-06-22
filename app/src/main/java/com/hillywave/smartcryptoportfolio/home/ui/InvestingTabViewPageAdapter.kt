@@ -5,7 +5,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.hillywave.smartcryptoportfolio.home.investingtab.domain.InvestingTabCategory
 import com.hillywave.smartcryptoportfolio.home.investingtab.ui.InvestingTabFragment
 
-class InvestingTabViewPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
+class InvestingTabViewPageAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
 
 	companion object {
 		private const val INVESTING_TAB_PORTFOLIO = 0

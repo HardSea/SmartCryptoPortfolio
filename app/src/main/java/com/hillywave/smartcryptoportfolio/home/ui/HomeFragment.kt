@@ -36,7 +36,7 @@ class HomeFragment : BaseFragment(R.layout.home_fragment) {
 				)
 			}
 		}
-		bindings.investmentsViewPager.adapter = InvestingTabViewPagerAdapter(this)
+		bindings.investmentsViewPager.adapter = InvestingTabViewPageAdapter(this)
 	}
 
 	private fun switchInvestingTab(tab1Color: Int, tab2Color: Int, size: Float, currentItem: Int) {
