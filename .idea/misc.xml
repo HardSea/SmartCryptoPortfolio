@@ -24,7 +24,7 @@
         <entry key="app/src/main/res/layout/box_layout.xml" value="0.25" />
         <entry key="app/src/main/res/layout/currency_widget_view.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_portfolio_tab.xml" value="0.5" />
-        <entry key="app/src/main/res/layout/home_fragment.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/home_fragment.xml" value="0.25" />
         <entry key="app/src/main/res/layout/investing_tab_fragment.xml" value="0.2101851851851852" />
         <entry key="app/src/main/res/layout/investing_tab_layout.xml" value="0.5335689045936396" />
         <entry key="app/src/main/res/layout/investments_tab_view.xml" value="0.23958333333333334" />

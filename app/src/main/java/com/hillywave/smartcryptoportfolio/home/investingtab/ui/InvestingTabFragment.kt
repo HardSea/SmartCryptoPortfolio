@@ -12,6 +12,7 @@ import com.hillywave.smartcryptoportfolio.databinding.FragmentInvestingTabBindin
 class InvestingTabFragment<T : Any> : BaseFragment(R.layout.fragment_investing_tab) {
 
 	private lateinit var bindings: FragmentInvestingTabBinding
+	private var adapter: InvestingTabAdapter? = null
 
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
 		bindings = FragmentInvestingTabBinding.inflate(layoutInflater)
@@ -20,8 +21,12 @@ class InvestingTabFragment<T : Any> : BaseFragment(R.layout.fragment_investing_t
 	}
 
 	private fun initRecyclerView() {
-		bindings.rvTabItems.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-
+		adapter = InvestingTabAdapter()
+		bindings.rvTabItems.apply {
+			layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+			adapter = this@InvestingTabFragment.adapter
+		}
+		adapter?.updateItems(listOf("Hello", "Abc", "Acd"))
 	}
 
 	companion object {
