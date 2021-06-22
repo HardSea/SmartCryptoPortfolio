@@ -12,7 +12,7 @@ import com.hillywave.smartcryptoportfolio.databinding.FragmentInvestingTabBindin
 class InvestingTabFragment<T : Any> : BaseFragment(R.layout.fragment_investing_tab) {
 
 	private lateinit var bindings: FragmentInvestingTabBinding
-	private var adapter: InvestingTabAdapter? = null
+	private var adapter: InvestingTabAdapter<T>? = null
 
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
 		bindings = FragmentInvestingTabBinding.inflate(layoutInflater)
